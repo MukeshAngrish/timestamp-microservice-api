@@ -1,0 +1,73 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+
+<!-- You might want to try something fancier: -->
+<!-- html/nunjucks docs: https://mozilla.github.io/nunjucks/ -->
+<!-- pug: https://pugjs.org/ -->
+<!-- haml: http://haml.info/ -->
+<!-- hbs(handlebars): http://handlebarsjs.com/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Timestamp Micro-service</title>
+    <meta name="description" content="A cool thing made with Glitch">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <header>
+      <h1>
+        API Project: Timestamp Microservice
+      </h1>
+      <h3>
+        User Stories:
+      </h3>
+    </header>
+    
+    <main>
+      <ol>
+        <li>The API endpoint is <span>GET [project_url]/api/timestamp/:datestr</span></li>
+        <li>A date string is valid if can be successfully parsed by <span>new Date(datestr)</span>.
+Note that the unix timestamp needs to be an <strong>integer</strong> (not a string) specifying <strong>milliseconds</strong>.
+In our test we will use date strings compliant with ISO-8601 (e.g. <span>"2016-11-20"</span>) 
+          because this will ensure an UTC timestamp.</li>
+        <li>If the date string is <strong>empty</strong> it should return
+          <span>null</span> for both the unix timestamp and natural language date.</li>
+        <li>If the date string is <strong>valid</strong> the api returns a JSON having the structure
+<span>{"unix": &ltdate.getTime()&gt, "utc" : &ltdate.toUTCString()&gt}</span>
+e.g. <span>{"unix": 1479663089000 ,"utc": "Sun, 20 Nov 2016 17:31:29 GMT"}</span></li>
+        <li>If the date string is invalid the api returns a JSON having the structure 
+<span>{"error" : "Invalid Date"}</span>.</li>
+      </ol>
+      <section>
+        <h3>
+        Examlple Usage:
+        </h3>
+        <a href="https://ripe-anger.glitch.me/api/timestamp/2015-12-15" target="_blank">[project_url]/api/timestamp/2015-12-15</a><br>
+        <a href="https://ripe-anger.glitch.me/api/timestamp/1450137600" target="_blank">[project_url]/api/timestamp/1450137600</a>
+
+        <h3>
+          Example Output  
+        </h3>
+        <span>{"unix": 1451001600000, "utc": "Fri, 25 Dec 2015 00:00:00 GMT"}</span>
+      </section>
+    </main>
+
+    <footer>
+      Made by <a href="https://www.freecodecamp.org/mukeshangrish" target="_blank">Mukesh K. Angrish</a>
+    </footer>
+
+    <!-- include the Glitch button to show what the webpage is about and
+          to make it easier for folks to view source and remix -->
+    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+    <script src="https://button.glitch.me/button.js"></script>
+
+  </body>
+</html>
