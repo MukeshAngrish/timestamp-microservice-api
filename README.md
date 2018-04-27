@@ -1,7 +1,6 @@
 Timestamp Microservice Api
 =================
-
-
+An API service built with Node and Express.
 
 User Stories
 ------------
